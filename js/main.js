@@ -95,3 +95,10 @@ fetch(`../json/data.json`)
 
         let selected = 0;
 
+        const select = (n) => {
+            if (n < 0 || n >= slides.length) return;
+            slides[selected].classList.remove(`selected`);
+            slides[n].classList.add(`selected`);
+            selected = n;
+        };
+
