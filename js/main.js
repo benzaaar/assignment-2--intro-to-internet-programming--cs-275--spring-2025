@@ -93,3 +93,5 @@ fetch(`../json/data.json`)
             );
         });
 
+        let selected = 0;
+
