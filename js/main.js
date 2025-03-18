@@ -30,3 +30,5 @@ window.onload = () => {
 
 
 
+let imgPlace = document.querySelector(`div.carousel-slides`);
+
