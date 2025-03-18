@@ -102,3 +102,5 @@ fetch(`../json/data.json`)
             selected = n;
         };
 
+        select(0);
+
