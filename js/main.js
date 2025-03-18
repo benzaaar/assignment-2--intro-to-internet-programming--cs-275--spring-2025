@@ -32,3 +32,46 @@ window.onload = () => {
 
 let imgPlace = document.querySelector(`div.carousel-slides`);
 
+const createSlide = (artist, artistUrl, album, coverPath, coverAlt, reviewContent, reviewSource, reviewUrl, creditText, creditUrl) => {
+    let slideWrapper = document.createElement(`div`);
+    slideWrapper.className = `slide`;
+
+    let artistLabel = document.createElement(`div`);
+    artistLabel.className = `artist-name`;
+    let artistLink = document.createElement(`a`);
+    artistLink.href = artistUrl;
+    artistLink.target = `_blank`;
+    artistLink.textContent = artist;
+    artistLabel.appendChild(artistLink);
+
+    let image = document.createElement(`img`);
+    image.src = coverPath;
+    image.alt = coverAlt;
+    image.className = `carousel-img`;
+
+    let creditLink = document.createElement(`a`);
+    creditLink.href = creditUrl;
+    creditLink.target = `_blank`;
+    creditLink.className = `image-credit`;
+    creditLink.textContent = creditText;
+
+    let description = document.createElement(`div`);
+    description.className = `description`;
+    description.textContent = reviewContent;
+
+    let reviewSourceLink = document.createElement(`a`);
+    reviewSourceLink.href = reviewUrl;
+    reviewSourceLink.target = `_blank`;
+    reviewSourceLink.className = `review-source`;
+    reviewSourceLink.textContent = `Review by: ${reviewSource}`;
+
+    slideWrapper.appendChild(artistLabel);
+    slideWrapper.appendChild(image);
+    slideWrapper.appendChild(creditLink);
+    slideWrapper.appendChild(description);
+    slideWrapper.appendChild(reviewSourceLink);
+
+    imgPlace.appendChild(slideWrapper);
+    return slideWrapper;
+};
+
