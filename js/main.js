@@ -104,3 +104,6 @@ fetch(`../json/data.json`)
 
         select(0);
 
+        document.querySelector(`.carousel-navigation a:nth-child(1)`).onclick = () => select(selected - 1);
+        document.querySelector(`.carousel-navigation a:nth-child(2)`).onclick = () => select(selected + 1);
+    });
