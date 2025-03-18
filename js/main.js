@@ -75,3 +75,21 @@ const createSlide = (artist, artistUrl, album, coverPath, coverAlt, reviewConten
     return slideWrapper;
 };
 
+fetch(`../json/data.json`)
+    .then(response => response.json())
+    .then(data => {
+        let slides = data.map(item => {
+            return createSlide(
+                item.artist,
+                item.url,
+                item.album,
+                item.cover_image.path,
+                item.cover_image.alt_content,
+                item.review.content,
+                item.review.source,
+                item.review.url,
+                item.cover_image.credit,
+                item.cover_image.url
+            );
+        });
+
